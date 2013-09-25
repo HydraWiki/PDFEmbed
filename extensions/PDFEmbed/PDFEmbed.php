@@ -21,7 +21,7 @@ $credits = array(
 	'descriptionmsg'	=> 'pdfembed_description',
 	'version'			=> '1.0'
 );
-$wgExtensionCredits['media'][] = $credits;
+$wgExtensionCredits['parserhook'][] = $credits;
 
 
 /******************************************/
