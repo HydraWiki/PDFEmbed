@@ -38,6 +38,10 @@ class PDFEmbed {
 		global $pdfEmbed, $wgRequest, $wgUser;
 		$parser->disableCache();
 
+		if (strstr($file, '{{{') !== false) {
+			$file = $parser->recursiveTagParse($file, $frame);
+		}
+
 		if ($wgRequest->getVal('action') == 'edit' || $wgRequest->getVal('action') == 'submit') {
 			$user = $wgUser;
 		} else {
