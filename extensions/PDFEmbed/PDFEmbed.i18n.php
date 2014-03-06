@@ -10,7 +10,7 @@
  *
  **/
 
-$messages = array();
+$messages = [];
 
 $messages['en'] = [
 	'pdfembed'						=> 'PDF Embed',
@@ -21,8 +21,8 @@ $messages['en'] = [
 	'pdf_not_supported'				=> 'The PDF file did not load properly or your web browser does not support viewing PDF files.  Download <a href="$1">$2</a> directly to your device.'
 ];
 
-$magicWords = array();
+$magicWords = [];
 
-$magicWords['en'] = array();
+$magicWords['en'] = [];
 
 ?>
