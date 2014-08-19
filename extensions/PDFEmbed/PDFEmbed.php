@@ -32,6 +32,7 @@ $extDir = dirname(__FILE__);
 $wgAvailableRights[] = 'embed_pdf';
 
 $wgExtensionMessagesFiles['PDFEmbed']		= "{$extDir}/PDFEmbed.i18n.php";
+$wgMessagesDirs['PDFEmbed']					= "{$extDir}/i18n";
 
 $wgAutoloadClasses['PDFEmbed']				= "{$extDir}/PDFEmbed.hooks.php";
 $wgAutoloadClasses['PDFHandler']			= "{$extDir}/classes/PDFHandler.class.php";
