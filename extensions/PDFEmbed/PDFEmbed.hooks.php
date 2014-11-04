@@ -62,8 +62,8 @@ class PDFEmbed {
 
 		$file = wfFindFile(Title::newFromText($file));
 
-		$width  = ($args['width'] > 0 ? intval($args['width']) : intval($pdfEmbed['width']));
-		$height = ($args['height'] > 0 ? intval($args['height']) : intval($pdfEmbed['height']));
+		$width  = (array_key_exists('width', $args) ? intval($args['width']) : intval($pdfEmbed['width']));
+		$height = (array_key_exists('height', $args) ? intval($args['height']) : intval($pdfEmbed['height']));
 
 		if ($file !== false) {
 			return self::embed($file, $width, $height);
