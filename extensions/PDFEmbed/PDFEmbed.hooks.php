@@ -82,7 +82,7 @@ class PDFEmbed {
 	 * @return	string	HTML object.
 	 */
 	static private function embed(File $file, $width, $height) {
-		return "<object width='{$width}' height='{$height}' data='".$file->getFullUrl()."' type='application/pdf'>".wfMessage('pdf_not_supported', $file->getFullUrl(), $file->getName())->plain()."</object>";
+		return "<a href='/wiki/File:".$file->getName()."' title='File:".$file->getName()."' style='display: inline-block'><object width='{$width}' height='{$height}' data='".$file->getFullUrl()."' type='application/pdf' style='pointer-events: none'>".wfMessage('pdf_not_supported', $file->getFullUrl(), $file->getName())->plain()."</object></a>";
 	}
 
 	/**
