@@ -73,9 +73,9 @@ class PDFEmbed {
 	}
 
 	/**
-	 * Returns a standard error message.
+	 * Returns a HTML object as string.
 	 *
-	 * @access	public
+	 * @access	private
 	 * @param	object	File object.
 	 * @param	integer	Width of the object.
 	 * @param	integer	Height of the object.
@@ -88,7 +88,7 @@ class PDFEmbed {
 	/**
 	 * Returns a standard error message.
 	 *
-	 * @access	public
+	 * @access	private
 	 * @param	string	Error message key to display.
 	 * @return	string	HTML error message.
 	 */
