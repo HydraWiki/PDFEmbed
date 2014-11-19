@@ -34,7 +34,7 @@ class PDFEmbed {
 	 * @param	object	PPFrame object.
 	 * @return	string	HTML
 	 */
-	static public function generateTag($file, $args = array(), Parser $parser, PPFrame $frame) {
+	static public function generateTag($file, $args = [], Parser $parser, PPFrame $frame) {
 		global $pdfEmbed, $wgRequest, $wgUser;
 		$parser->disableCache();
 
@@ -62,8 +62,8 @@ class PDFEmbed {
 
 		$file = wfFindFile(Title::newFromText($file));
 
-		$width  = ($args['width'] > 0 ? intval($args['width']) : intval($pdfEmbed['width']));
-		$height = ($args['height'] > 0 ? intval($args['height']) : intval($pdfEmbed['height']));
+		$width  = (array_key_exists('width', $args) ? intval($args['width']) : intval($pdfEmbed['width']));
+		$height = (array_key_exists('height', $args) ? intval($args['height']) : intval($pdfEmbed['height']));
 
 		if ($file !== false) {
 			return self::embed($file, $width, $height);
@@ -73,9 +73,9 @@ class PDFEmbed {
 	}
 
 	/**
-	 * Returns a standard error message.
+	 * Returns a HTML object as string.
 	 *
-	 * @access	public
+	 * @access	private
 	 * @param	object	File object.
 	 * @param	integer	Width of the object.
 	 * @param	integer	Height of the object.
@@ -88,7 +88,7 @@ class PDFEmbed {
 	/**
 	 * Returns a standard error message.
 	 *
-	 * @access	public
+	 * @access	private
 	 * @param	string	Error message key to display.
 	 * @return	string	HTML error message.
 	 */
