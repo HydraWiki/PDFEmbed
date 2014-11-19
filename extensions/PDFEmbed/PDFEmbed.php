@@ -19,7 +19,7 @@ $credits = [
 	'author'			=> 'Alexia E. Smith',
 	'url'				=> 'http://www.mediawiki.org/wiki/Extension:PDFEmbed',
 	'descriptionmsg'	=> 'pdfembed_description',
-	'version'			=> '1.1'
+	'version'			=> '1.1.1'
 ];
 $wgExtensionCredits['parserhook'][] = $credits;
 
