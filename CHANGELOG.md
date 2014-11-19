@@ -1,4 +1,4 @@
-#1.1.1
+#v1.1.1
 * German Translations provided by kghbln <kontakt@wikihoster.net>
 
 #v1.1
