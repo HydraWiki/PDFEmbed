@@ -83,7 +83,15 @@ class PDFEmbed {
 	 * @return	string	HTML object.
 	 */
 	static private function embed(File $file, $width, $height, $page) {
-		return "<object width='{$width}' height='{$height}' data='".$file->getFullUrl()."#page={$page}"."' type='application/pdf'>".wfMessage('pdf_not_supported', $file->getFullUrl(), $file->getName())->plain()."<param name='page' value='$page' />"."</object>";
+                return Html::rawElement('object', [
+                        'width' => $width,
+                        'height' => $height,
+                        'data' => $file->getFullUrl().'#page='.$page,
+                        'type' => 'application/pdf'
+                        ],
+                        wfMessage('pdf_not_supported', $file->getFullUrl(), $file->getName())->escaped()
+                        ."<param name='page' value='$page' />"
+                );
 	}
 
 	/**
