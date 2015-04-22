@@ -34,7 +34,7 @@ class PDFHandler {
 	 * @param	object	PPFrame object.
 	 * @return	string	HTML
 	 */
-	static public function generateTag($file, $args = [], Parser $parser, PPFrame $frame) {
+	static public function generateTag($file, $args = array(), Parser $parser, PPFrame $frame) {
 		global $pdfEmbed, $wgUser;
 		$parser->disableCache();
 

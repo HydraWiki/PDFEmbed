@@ -13,14 +13,14 @@
 /******************************************/
 /* Credits								  */
 /******************************************/
-$credits = [
+$credits = array(
 	'path'				=> __FILE__,
 	'name'				=> 'PDFEmbed',
 	'author'			=> 'Alexia E. Smith',
 	'url'				=> 'http://www.mediawiki.org/wiki/Extension:PDFEmbed',
 	'descriptionmsg'	=> 'pdfembed_description',
 	'version'			=> '1.1.2'
-];
+);
 $wgExtensionCredits['parserhook'][] = $credits;
 
 
