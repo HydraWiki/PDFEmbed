@@ -64,9 +64,10 @@ class PDFEmbed {
 
 		$width  = (array_key_exists('width', $args) ? intval($args['width']) : intval($pdfEmbed['width']));
 		$height = (array_key_exists('height', $args) ? intval($args['height']) : intval($pdfEmbed['height']));
+		$page = (array_key_exists('page', $args) ? intval($args['page']) : 1);
 
 		if ($file !== false) {
-			return self::embed($file, $width, $height);
+			return self::embed($file, $width, $height, $page);
 		} else {
 			return self::error('embed_pdf_invalid_file');
 		}
@@ -81,8 +82,16 @@ class PDFEmbed {
 	 * @param	integer	Height of the object.
 	 * @return	string	HTML object.
 	 */
-	static private function embed(File $file, $width, $height) {
-		return "<object width='{$width}' height='{$height}' data='".$file->getFullUrl()."' type='application/pdf'>".wfMessage('pdf_not_supported', $file->getFullUrl(), $file->getName())->plain()."</object>";
+	static private function embed(File $file, $width, $height, $page) {
+                return Html::rawElement('object', [
+                        'width' => $width,
+                        'height' => $height,
+                        'data' => $file->getFullUrl().'#page='.$page,
+                        'type' => 'application/pdf'
+                        ],
+                        wfMessage('pdf_not_supported', $file->getFullUrl(), $file->getName())->escaped()
+                        ."<param name='page' value='$page' />"
+                );
 	}
 
 	/**
