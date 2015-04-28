@@ -105,4 +105,3 @@ class PDFEmbed {
 		return Xml::span(wfMessage($messageKey)->plain(), 'error');
 	}
 }
-?>

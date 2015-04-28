@@ -64,4 +64,3 @@ if (!isset($pdfEmbed['width'])) {
 if (!isset($pdfEmbed['height'])) {
 	$pdfEmbed['height'] = 1090;
 }
-?>

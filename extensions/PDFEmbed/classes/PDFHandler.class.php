@@ -82,4 +82,3 @@ class PDFHandler {
 		return Xml::span(wfMessage($messageKey)->plain(), 'error');
 	}
 }
-?>
