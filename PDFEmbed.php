@@ -17,9 +17,10 @@ $credits = [
 	'path'				=> __FILE__,
 	'name'				=> 'PDFEmbed',
 	'author'			=> 'Alexia E. Smith',
-	'url'				=> 'http://www.mediawiki.org/wiki/Extension:PDFEmbed',
+	'url'				=> 'https://www.mediawiki.org/wiki/Extension:PDFEmbed',
 	'descriptionmsg'	=> 'pdfembed_description',
-	'version'			=> '1.1.2'
+	'version'			=> '1.1.2',
+	'license-name'		=> 'LGPL-3.0'
 ];
 $wgExtensionCredits['parserhook'][] = $credits;
 
