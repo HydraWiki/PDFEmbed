@@ -35,7 +35,7 @@ class PDFEmbed {
 	 * @return	string	HTML
 	 */
 	static public function generateTag($file, $args = [], Parser $parser, PPFrame $frame) {
-		global $pdfEmbed, $wgRequest, $wgUser;
+		global $wgPdfEmbed, $wgRequest, $wgUser;
 		$parser->disableCache();
 
 		if (strstr($file, '{{{') !== false) {
@@ -62,8 +62,8 @@ class PDFEmbed {
 
 		$file = wfFindFile(Title::newFromText($file));
 
-		$width  = (array_key_exists('width', $args) ? intval($args['width']) : intval($pdfEmbed['width']));
-		$height = (array_key_exists('height', $args) ? intval($args['height']) : intval($pdfEmbed['height']));
+		$width  = (array_key_exists('width', $args) ? intval($args['width']) : intval($wgPdfEmbed['width']));
+		$height = (array_key_exists('height', $args) ? intval($args['height']) : intval($wgPdfEmbed['height']));
 		$page = (array_key_exists('page', $args) ? intval($args['page']) : 1);
 
 		if ($file !== false) {
@@ -87,7 +87,8 @@ class PDFEmbed {
 				'width' => $width,
 				'height' => $height,
 				'data' => $file->getFullUrl().'#page='.$page,
-				'type' => 'application/pdf'
+				'type' => 'application/pdf',
+				'style' => 'max-width: 100%;'
 			],
 			wfMessage('pdf_not_supported', $file->getFullUrl(), $file->getName())->escaped()
 			."<param name='page' value='$page' />"

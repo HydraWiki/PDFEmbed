@@ -35,7 +35,7 @@ class PDFHandler {
 	 * @return	string	HTML
 	 */
 	static public function generateTag($file, $args = [], Parser $parser, PPFrame $frame) {
-		global $pdfEmbed, $wgUser;
+		global $wgPdfEmbed, $wgUser;
 		$parser->disableCache();
 
 		if (!$wgUser->isAllowed('pdf')) {
@@ -48,8 +48,8 @@ class PDFHandler {
 
 		$file = wfFindFile(Title::newFromText($file));
 
-		$width  = ($args['width'] > 0 ? intval($args['width']) : intval($pdfEmbed['width']));
-		$height = ($args['height'] > 0 ? intval($args['height']) : intval($pdfEmbed['height']));
+		$width  = ($args['width'] > 0 ? intval($args['width']) : intval($wgPdfEmbed['width']));
+		$height = ($args['height'] > 0 ? intval($args['height']) : intval($wgPdfEmbed['height']));
 
 		if ($file !== false) {
 			return self::embed($file, $width, $height);
@@ -68,7 +68,7 @@ class PDFHandler {
 	 * @return	string	HTML object.
 	 */
 	static private function embed(File $file, $width, $height) {
-		return "<object width='{$width}' height='{$height}' data='".urlencode($file->getFullUrl())." type='application/pdf'></object>";
+		return "<object width='{$width}' height='{$height}' style='max-width: 100%;' data='".urlencode($file->getFullUrl())." type='application/pdf'></object>";
 	}
 
 	/**

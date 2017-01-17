@@ -18,8 +18,8 @@ Configuration
 If the default configuration needs to be altered add these settings to the LocalSettings.php file below the require:
 ```php
 //Default width for the PDF object container.
-$pdfEmbed['width'] = 800;
+$wgPdfEmbed['width'] = 800;
 
 //Default height for the PDF object container.
-$pdfEmbed['height'] = 1090;
+$wgPdfEmbed['height'] = 1090;
 ```
