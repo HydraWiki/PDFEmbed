@@ -9,7 +9,7 @@ Installation
 To install this extension, add the following to the end of the LocalSettings.php file:
 ```php
 //PDFEmbed
-wfLoadExtension("PDFEmbed");
+wfLoadExtension('PDFEmbed');
 ```
 
 Configuration

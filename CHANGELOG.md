@@ -1,3 +1,6 @@
+#v2.0.1
+* Switched over to iframes to support newer browsers.
+
 #v2.0.0
 * Converted to extension registration.
 * Forcing a max-width: 100%; on the object container.
