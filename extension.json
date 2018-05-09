@@ -26,10 +26,10 @@
 	"Hooks": {
 		"ParserFirstCallInit": "PDFEmbed::onParserFirstCallInit"
 	},
+	"FileExtensions": [
+		"pdf"
+	],
 	"config": {
-		"FileExtensions": [
-			"pdf"
-		],
 		"PdfEmbed": {
 			"width": 800,
 			"height": 1090
